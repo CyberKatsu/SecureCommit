@@ -1,0 +1,145 @@
+version: "3.9"
+
+# ── Networks ─────────────────────────────────────────────────────────────────
+# All services share one internal network.  Only the FastAPI server and the
+# Reflex dashboard expose ports to the host.
+
+networks:
+  securecommit:
+    driver: bridge
+
+# ── Volumes ──────────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+  redis_data:
+
+# ── Common anchors ────────────────────────────────────────────────────────────
+x-app-env: &app-env
+  GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET}
+  GITHUB_TOKEN: ${GITHUB_TOKEN}
+  ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+  DATABASE_URL: postgresql+asyncpg://securecommit:securecommit@postgres:5432/securecommit
+  DATABASE_URL_SYNC: postgresql+psycopg2://securecommit:securecommit@postgres:5432/securecommit
+  REDIS_URL: redis://redis:6379/0
+  CELERY_RESULT_BACKEND: redis://redis:6379/1
+  DEBUG: "false"
+
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: securecommit
+      POSTGRES_PASSWORD: securecommit
+      POSTGRES_DB: securecommit
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - securecommit
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U securecommit"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Redis ───────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - securecommit
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # ── FastAPI webhook server ──────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    restart: unless-stopped
+    environment:
+      <<: *app-env
+    ports:
+      - "8000:8000"
+    networks:
+      - securecommit
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Celery worker ───────────────────────────────────────────────────────────
+  # Design decision: concurrency=2 because each task makes sequential blocking
+  # calls to the Anthropic and GitHub APIs.  More workers would just queue behind
+  # those I/O waits without improving throughput.  Tune based on real load.
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: worker
+    restart: unless-stopped
+    environment:
+      <<: *app-env
+    networks:
+      - securecommit
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    # Celery worker command — loglevel=info is sufficient for production.
+    command: >
+      celery -A app.tasks.review_tasks.celery_app worker
+      --loglevel=info
+      --concurrency=2
+      --queues=celery
+
+  # ── Alembic migrations (run-once init container) ────────────────────────────
+  # Design decision: a separate short-lived container runs migrations at startup.
+  # This avoids race conditions between multiple API replicas trying to migrate
+  # simultaneously and keeps migration logic out of the API image entrypoint.
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    environment:
+      <<: *app-env
+    networks:
+      - securecommit
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: alembic upgrade head
+    restart: "no"
+
+  # ── Reflex dashboard ─────────────────────────────────────────────────────────
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dashboard
+    restart: unless-stopped
+    environment:
+      API_BASE: http://api:8000
+    ports:
+      - "3000:3000"
+    networks:
+      - securecommit
+    depends_on:
+      - api
