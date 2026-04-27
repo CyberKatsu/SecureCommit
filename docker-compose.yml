@@ -1,5 +1,3 @@
-version: "3.9"
-
 # ── Networks ─────────────────────────────────────────────────────────────────
 # All services share one internal network.  Only the FastAPI server and the
 # Reflex dashboard expose ports to the host.
@@ -23,6 +21,7 @@ x-app-env: &app-env
   REDIS_URL: redis://redis:6379/0
   CELERY_RESULT_BACKEND: redis://redis:6379/1
   DEBUG: "false"
+  ALLOWED_HOSTS: "localhost,127.0.0.1,api"
 
 services:
 
@@ -139,6 +138,7 @@ services:
       API_BASE: http://api:8000
     ports:
       - "3000:3000"
+      - "8001:8001"
     networks:
       - securecommit
     depends_on:

@@ -11,6 +11,8 @@ We fetch from the FastAPI /api/sessions endpoint rather than hitting Postgres
 directly, keeping the dashboard decoupled from the DB schema.
 """
 
+import os
+
 import reflex as rx
 import httpx
 from datetime import datetime
@@ -72,7 +74,7 @@ class DashboardState(rx.State):
     selected_session_id: str = ""
     is_loading: bool = False
     error: str = ""
-    api_base: str = "http://localhost:8000"
+    api_base: str = os.getenv("API_BASE", "http://localhost:8000")
 
     @rx.var
     def selected_session(self) -> Optional[Session]:
@@ -118,12 +120,30 @@ class DashboardState(rx.State):
 
 # ── Components ────────────────────────────────────────────────────────────────
 
-def severity_badge(severity: str) -> rx.Component:
-    colour = SEVERITY_COLOURS.get(severity, GRAY)
+def severity_badge(severity) -> rx.Component:
+    colour = rx.match(
+        severity,
+        ("Critical", RED),
+        ("High", AMBER),
+        ("Medium", BLUE),
+        GRAY,
+    )
     return rx.box(
         rx.text(severity, font_family=FONT_MONO, font_size="11px", font_weight="700"),
-        background=f"{colour}22",
-        border=f"1px solid {colour}",
+        background=rx.match(
+            severity,
+            ("Critical", f"{RED}22"),
+            ("High", f"{AMBER}22"),
+            ("Medium", f"{BLUE}22"),
+            f"{GRAY}22",
+        ),
+        border=rx.match(
+            severity,
+            ("Critical", f"1px solid {RED}"),
+            ("High", f"1px solid {AMBER}"),
+            ("Medium", f"1px solid {BLUE}"),
+            f"1px solid {GRAY}",
+        ),
         color=colour,
         padding="2px 8px",
         border_radius="3px",
@@ -131,20 +151,20 @@ def severity_badge(severity: str) -> rx.Component:
     )
 
 
-def status_dot(status: str) -> rx.Component:
-    colours = {
-        "completed": GREEN_PRIMARY,
-        "processing": AMBER,
-        "pending": GRAY,
-        "failed": RED,
-    }
-    colour = colours.get(status, GRAY)
+def status_dot(status) -> rx.Component:
+    colour = rx.match(
+        status,
+        ("completed", GREEN_PRIMARY),
+        ("processing", AMBER),
+        ("pending", GRAY),
+        ("failed", RED),
+        GRAY,
+    )
     return rx.box(
         width="8px",
         height="8px",
         border_radius="50%",
         background=colour,
-        box_shadow=f"0 0 6px {colour}",
         display="inline-block",
         margin_right="8px",
         flex_shrink="0",
@@ -180,9 +200,12 @@ def stat_card(label: str, value: rx.Var, accent: str = GREEN_PRIMARY) -> rx.Comp
     )
 
 
+def _sev_match(sev, critical, high, medium, default):
+    return rx.match(sev, ("Critical", critical), ("High", high), ("Medium", medium), default)
+
+
 def finding_row(finding: dict) -> rx.Component:
     sev = finding.get("severity", "Low")
-    colour = SEVERITY_COLOURS.get(sev, GRAY)
     return rx.box(
         rx.hstack(
             severity_badge(sev),
@@ -195,8 +218,10 @@ def finding_row(finding: dict) -> rx.Component:
                     font_weight="600",
                 ),
                 rx.text(
-                    f"Line {finding.get('diff_line_number', '?')} · "
-                    f"{finding.get('category', '').replace('_', ' ')}",
+                    "Line ",
+                    finding.get("diff_line_number", "?"),
+                    " · ",
+                    finding.get("category", ""),
                     font_family=FONT_MONO,
                     font_size="11px",
                     color=GRAY,
@@ -238,7 +263,7 @@ def finding_row(finding: dict) -> rx.Component:
         ),
         background=TERMINAL_BG2,
         border=f"1px solid {TERMINAL_BORDER}",
-        border_left=f"3px solid {colour}",
+        border_left=_sev_match(sev, f"3px solid {RED}", f"3px solid {AMBER}", f"3px solid {BLUE}", f"3px solid {GRAY}"),
         padding="16px 20px",
         border_radius="4px",
         margin_bottom="8px",
@@ -279,14 +304,18 @@ def session_row(session: Session) -> rx.Component:
             ),
             rx.vstack(
                 rx.text(
-                    f"{session.finding_count} finding(s)",
+                    session.finding_count,
+                    " finding(s)",
                     font_family=FONT_MONO,
                     font_size="11px",
                     color=GRAY,
                     text_align="right",
                 ),
-                severity_badge(session.worst_severity) if session.finding_count > 0
-                else rx.box(),
+                rx.cond(
+                    session.finding_count > 0,
+                    severity_badge(session.worst_severity),
+                    rx.box(),
+                ),
                 align="end",
                 spacing="1",
             ),
@@ -315,7 +344,7 @@ def session_row(session: Session) -> rx.Component:
 
 def detail_panel() -> rx.Component:
     return rx.cond(
-        DashboardState.selected_session is not None,
+        DashboardState.selected_session_id != "",
         rx.box(
             rx.hstack(
                 rx.vstack(

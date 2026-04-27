@@ -47,16 +47,29 @@ CMD ["celery", "-A", "app.tasks.review_tasks.celery_app", "worker", "--loglevel=
 
 
 # ── Dashboard target ──────────────────────────────────────────────────────────
-FROM base AS dashboard
+FROM python:3.12-slim AS dashboard
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    gcc \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements-dashboard.txt .
 RUN pip install --no-cache-dir -r requirements-dashboard.txt
 
 COPY dashboard/ ./dashboard/
+COPY dashboard/rxconfig.py .
 
 RUN adduser --disabled-password --gecos "" appuser && chown -R appuser /app
 USER appuser
 
 EXPOSE 3000
-WORKDIR /app/dashboard
-CMD ["reflex", "run", "--env", "prod", "--backend-only=false"]
+CMD ["reflex", "run", "--env", "prod"]

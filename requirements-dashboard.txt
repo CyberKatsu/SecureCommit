@@ -1,4 +1,6 @@
 # Reflex is a large dependency; keeping it separate means the API/worker
 # images don't pay the installation cost.
-reflex==0.6.7
+reflex==0.8.28.post1
+pydantic==2.9.2
+sqlmodel==0.0.27
 httpx==0.27.2

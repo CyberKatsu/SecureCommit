@@ -1,0 +1,728 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 59, in pydantic_v1_patch
+    yield
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 74, in <module>
+    import sqlmodel as sqlmodel
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/__init__.py", line 117, in <module>
+    from .main import Field as Field
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/main.py", line 55, in <module>
+    from ._compat import (  # type: ignore[attr-defined]
+  File "/usr/local/lib/python3.12/site-packages/sqlmodel/_compat.py", line 23, in <module>
+    from pydantic._internal._fields import PydanticMetadata
+  File "/usr/local/lib/python3.12/site-packages/pydantic/_internal/_fields.py", line 17, in <module>
+    from pydantic import PydanticDeprecatedSince211
+ImportError: cannot import name 'PydanticDeprecatedSince211' from 'pydantic.v1' (/usr/local/lib/python3.12/site-packages/pydantic/v1/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/reflex", line 5, in <module>
+    from reflex.reflex import cli
+  File "/usr/local/lib/python3.12/site-packages/reflex/__init__.py", line 87, in <module>
+    from reflex.utils import (
+  File "/usr/local/lib/python3.12/site-packages/reflex/utils/compat.py", line 73, in <module>
+    with pydantic_v1_patch():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 194, in __exit__
+    raise RuntimeError("generator didn't stop after throw()")
+RuntimeError: generator didn't stop after throw()

@@ -16,6 +16,7 @@ Design decisions:
 from __future__ import annotations
 
 import logging
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -66,11 +67,15 @@ def create_app() -> FastAPI:
     )
 
     # Only accept requests from expected hosts in production.
-    # In Docker Compose we leave this permissive; tighten for real deployments.
+    # Configure ALLOWED_HOSTS in your deployment environment.
     if not settings.debug:
+        allowed_hosts = os.getenv("ALLOWED_HOSTS", "").split(",")
+        if allowed_hosts == [""]:
+            # Default to localhost for development deployments
+            allowed_hosts = ["localhost", "127.0.0.1"]
         app.add_middleware(
             TrustedHostMiddleware,
-            allowed_hosts=["*"],  # Tighten to your domain in production.
+            allowed_hosts=allowed_hosts,
         )
 
     app.include_router(webhook_router)

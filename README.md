@@ -2,9 +2,11 @@
 
 > **A GitHub App that automatically reviews pull request diffs for security vulnerabilities using Claude (Anthropic), posts inline review comments on offending lines, and persists all findings to PostgreSQL.**
 
-[![CI](https://github.com/YOUR_ORG/securecommit/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_ORG/securecommit/actions/workflows/ci.yml)
+[![CI](https://github.com/YOUR_USERNAME/securecommit/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/securecommit/actions/workflows/ci.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg)](https://fastapi.tiangolo.com)
+
+![SecureCommit Dashboard](public/dashboard-screenshot.png)
 
 ---
 
@@ -231,7 +233,7 @@ Running `asyncio` inside Celery workers requires setting up a new event loop per
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/YOUR_ORG/securecommit.git
+git clone https://github.com/YOUR_USERNAME/securecommit.git
 cd securecommit
 cp .env.example .env
 # Edit .env with your real values
@@ -263,8 +265,8 @@ ngrok http 8000
 1. Go to **GitHub → Settings → Developer settings → GitHub Apps → New GitHub App**
 2. Fill in:
    - **GitHub App name**: `SecureCommit` (must be unique on GitHub)
-   - **Homepage URL**: your ngrok/tunnel URL
-   - **Webhook URL**: `https://YOUR_URL/webhooks/github`
+   - **Homepage URL**: `https://YOUR_DOMAIN`
+   - **Webhook URL**: `https://YOUR_DOMAIN/webhooks/github`
    - **Webhook secret**: generate a random string, paste it into `.env` as `GITHUB_WEBHOOK_SECRET`
 3. **Repository permissions** (read & write):
    - `Pull requests` — Read & Write (to post review comments)
@@ -279,12 +281,12 @@ You can also create the app programmatically by posting this manifest to `https:
 ```json
 {
   "name": "SecureCommit",
-  "url": "https://YOUR_URL",
+  "url": "https://YOUR_DOMAIN",
   "hook_attributes": {
-    "url": "https://YOUR_URL/webhooks/github",
+    "url": "https://YOUR_DOMAIN/webhooks/github",
     "active": true
   },
-  "redirect_url": "https://YOUR_URL",
+  "redirect_url": "https://YOUR_DOMAIN",
   "default_permissions": {
     "pull_requests": "write",
     "contents": "read"
@@ -359,3 +361,4 @@ The Reflex dashboard runs at `http://localhost:3000` and displays:
 - **Detail panel**: all findings for the selected session — severity, category, file, line, explanation, suggested fix in a code block
 
 The terminal-green aesthetic is intentional: this is a security operations tool, not a marketing page.
+
